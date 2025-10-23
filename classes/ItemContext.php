@@ -84,14 +84,12 @@ abstract class ItemContext
 
     public function readItem(): void
     {
-        //s_print($this->status);
         if ($this->status == 'read') {
             $this->context->invokeEvent(
                 'onRead' . $this->itemName(),
                 $this->context->states[$this->classname]['read']
             );
         }
-        //s_print($this->status);
     }
 
     public function setReadOk(?array $row): void

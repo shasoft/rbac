@@ -168,3 +168,5 @@ interface IStorage
 ```
 
 Т.е. чтобы работать с произвольной БД достаточно написать под него хранилище. В стандартной поставке идет хранилище для [sqlite](https://www.sqlite.org/).
+
+Ссылка на [пакет на github](https://github.com/shasoft/rbac)
