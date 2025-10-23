@@ -1,0 +1,1 @@
+CREATE INDEX `rbac.cache.ref` ON `rbac.cache` (`type`,`ref`)
