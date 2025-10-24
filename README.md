@@ -78,6 +78,12 @@ flowchart BT
     class userAdmin,userModerator,userUser1,userUser2,userGuest User
 ```
 
+### Установка
+
+```bash
+composer require shasoft/rbac
+```
+
 ### Пример использования
 
 Схема прав
