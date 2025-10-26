@@ -26,6 +26,7 @@ erDiagram
         *Text* **description**
         *Integer* exists
         *Integer* linkToBan
+        *Integer* offsetValue
     }
 
     cache["**cache**"] {
