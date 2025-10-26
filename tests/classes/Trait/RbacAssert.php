@@ -12,7 +12,7 @@ use Shasoft\Terminal\Terminal;
 
 trait RbacAssert
 {
-    protected Rbac $rbac;
+    protected ?Rbac $rbac = null;
 
     protected function getFileLog(string $ext): string
     {
@@ -33,7 +33,10 @@ trait RbacAssert
         if (!$fOk) {
             $path = dirname($refClass->getFileName());
         }
-        $ret = $path . DIRECTORY_SEPARATOR . '.test-logs' . DIRECTORY_SEPARATOR . $filename . '.' . $ext;
+        if (!empty($ext)) {
+            $ext = '.' . $ext;
+        }
+        $ret = $path . DIRECTORY_SEPARATOR . '.test-logs' . DIRECTORY_SEPARATOR . $filename . $ext;
         return $ret;
     }
 

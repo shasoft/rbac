@@ -9,7 +9,7 @@ use Shasoft\Rbac\RbacContext;
 
 class CacheTest extends Base
 {
-    protected CacheAdapterArray $cacheAdapter;
+    protected ?CacheAdapterArray $cacheAdapter = null;
 
     protected function setUp(): void
     {
@@ -22,6 +22,7 @@ class CacheTest extends Base
     {
         parent::tearDown();
         $this->cache = null;
+        $this->cacheAdapter = null;
     }
 
     protected function assertCache(int $userId): void
