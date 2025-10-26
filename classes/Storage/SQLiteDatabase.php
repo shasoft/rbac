@@ -107,8 +107,12 @@ class SQLiteDatabase implements IStorage
             $row = $stmt->fetch(\PDO::FETCH_ASSOC);
             if ($row !== false) {
                 $rows[] = $row;
+            } else {
+                if (!empty($rows)) {
+                    call_user_func($cb, $rows);
+                }
             }
-            if ($row === false || count($rows) == $maxRecords) {
+            if (count($rows) == $maxRecords) {
                 call_user_func($cb, $rows);
                 $rows = [];
             }
