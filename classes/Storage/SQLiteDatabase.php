@@ -92,6 +92,7 @@ class SQLiteDatabase implements IStorage
 
     public function runQueryCb(string $sql, array $args, int $maxRecords, callable $cb): void
     {
+        /*
         try {
             // Сохранить текущее значение            
             $MYSQL_ATTR_USE_BUFFERED_QUERY = $this->pdo->getAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY);
@@ -100,6 +101,7 @@ class SQLiteDatabase implements IStorage
         } catch (\Throwable $th) {
             $MYSQL_ATTR_USE_BUFFERED_QUERY = null;
         }
+        //*/
         //
         $stmt = $this->runQuery($sql, $args);
         $rows = [];
@@ -117,10 +119,12 @@ class SQLiteDatabase implements IStorage
                 }
             }
         } while ($row !== false);
+        /*
         // Вернуть сохраненное значение
         if (!is_null($MYSQL_ATTR_USE_BUFFERED_QUERY)) {
             $this->pdo->setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, $MYSQL_ATTR_USE_BUFFERED_QUERY);
         }
+        //*/
     }
 
     protected function conversion_row(array $row): array
