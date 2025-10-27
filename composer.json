@@ -19,7 +19,7 @@
     "robiningelbrecht/phpunit-pretty-print": "^1.2",
     "shasoft/terminal-write-php":"*",
     "shasoft/dump":"*",
-    "shasoft/psr-cache":"*"    
+    "shasoft/psr-cache":"*"
   },
   "autoload-dev": {
     "psr-4": {
